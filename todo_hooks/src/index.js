@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+//19
+// import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import Typography from "@material-ui/core/Typography";
 import "./styles.css";
-import { Divider } from "@material-ui/core";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
+//20
+import useTodoState from "./useTodoState";
 
 //1.
 const App = () => {
-  //10
-  //Начальное состояние компонента должно быть пустым массивом.
-  const [todos, setTodos] = useState([]);
+  //21
+  // //10
+  // //Начальное состояние компонента должно быть пустым массивом.
+  // const [todos, setTodos] = useState([]);
+  const { todos, addTodo, deleteTodo } = useTodoState([]);
+
   //2.
   return (
     <div className="App">
@@ -25,6 +31,7 @@ const App = () => {
       Проще всего объединить уже существующие задачи с новой. 
       Дополнительные пробелы будут вырезаны.
       */}
+      {/*22 
       <TodoForm
         saveTodo={(todoText) => {
           const trimmedText = todoText.trim();
@@ -32,9 +39,19 @@ const App = () => {
             setTodos([...todos, trimmedText]);
           }
         }}
+      /> */}
+      {/*  23  */}
+      <TodoForm
+        saveTodo={(todoText) => {
+          const tirmmedText = todoText.trim();
+          if (tirmmedText.length > 0) {
+            addTodo(tirmmedText);
+          }
+        }}
       />
+      {/*  24  */}
       {/*14 
-      todos — массив всех задач*/}
+      todos — массив всех задач
       <TodoList
         todos={todos}
         //17
@@ -46,7 +63,9 @@ const App = () => {
             .filter((_, index) => index !== todoIndex);
           setTodos(newTodos);
         }}
-      />
+      />*/}
+      {/*  25  */}
+      <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>
   );
 };
