@@ -20,7 +20,9 @@ const TodoList = ({ todos, deleteTodo }) => (
         <Checkbox tabIndex={-1} disableFocusRipple />
         <ListItemText primary={todo} />
         <ListItemSecondaryAction>
-          {/*13
+          {/*13 (nr.14 in index.js)
+          Так как TodoList содержит индексы всех задач, 
+          можно без проблем найти нужный элемент для удаления.
           функция deleteTodo() вызывается при нажатии на 
             IconButton и передает index===key, который однозначно 
             идентифицирует пункт списка. */}

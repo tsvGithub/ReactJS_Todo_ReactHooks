@@ -12,12 +12,13 @@ import useTodoState from "./useTodoState";
 //1.
 const App = () => {
   //21
-  // //10
+  // //10 (nr.11 in TodoList.js)
+  // // Объявление переменной состояния todos
   // //Начальное состояние компонента должно быть пустым массивом.
   // const [todos, setTodos] = useState([]);
   const { todos, addTodo, deleteTodo } = useTodoState([]);
 
-  //2.
+  //2 (nr.3 in TodoForm.js)
   return (
     <div className="App">
       <Typography component="h1" variant="h2">
@@ -27,7 +28,7 @@ const App = () => {
       введённое значение логируется при подтверждении 
       (нажатии на Enter) 
       <TodoForm saveTodo={console.warn} /> */}
-      {/*15 
+      {/*15 (nr.16 in TodoForm.js)
       Проще всего объединить уже существующие задачи с новой. 
       Дополнительные пробелы будут вырезаны.
       */}
@@ -54,7 +55,7 @@ const App = () => {
       todos — массив всех задач
       <TodoList
         todos={todos}
-        //17
+        //17 (nr.18 in useTodoState.js)
         deleteTodo={(todoIndex) => {
           const newTodos = todos
             //Если задача с соответствующим index не найдена,
@@ -64,7 +65,7 @@ const App = () => {
           setTodos(newTodos);
         }}
       />*/}
-      {/*  25  */}
+      {/*  25  nr.26 in useInputState.js */}
       <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>
   );
