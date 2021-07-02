@@ -1,11 +1,5 @@
 import { useState } from "react";
 
-//18 (nr.19 in index.js)
-//React Hooks хорошо подходят для разделения состояния и
-//логики компонента
-//По сути это тот же самый код, что и в index.js, но теперь
-//управление состоянием не так плотно связано с компонентом.
-
 export default (initialValue) => {
   const [todos, setTodos] = useState(initialValue);
 
