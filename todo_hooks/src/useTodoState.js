@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default (initialValue) => {
   const [todos, setTodos] = useState(initialValue);
@@ -10,11 +10,16 @@ export default (initialValue) => {
   const deleteTodo = (todoIndex) => {
     const newTodos = todos.filter((_, index) => index !== todoIndex);
     setTodos(newTodos);
-    // className = "fadeOut";
   };
+
+  const deletedTodo = (todoIndex) => {
+    const deletedTodo = todos.filter((_, index) => index === todoIndex);
+  };
+
   return {
     todos,
     addTodo,
     deleteTodo,
+    deletedTodo,
   };
 };

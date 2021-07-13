@@ -58,7 +58,7 @@ input {
   margin: 2rem auto;
 }
 
-li {
+.task {
   display: flex;
   justify-content: space-between;
   font-size: 2rem;
@@ -67,7 +67,11 @@ li {
   /* animation-name: fadeOut; */
   /* animation-duration: 2s; */
 }
-
+.done {
+  text-decoration: line-through;
+  animation-name: fadeOut;
+  animation-duration: 3s;
+}
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -76,7 +80,7 @@ li {
     opacity: 0;
   }
 }
-.fadeOut {
+/* .fadeOut {
   animation-name: fadeOut;
   animation-duration: 15s;
-}
+} */
